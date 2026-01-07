@@ -46,3 +46,35 @@ infra/
       │   └── terraform.tfvars
       └── prod/
           └── terraform.tfvars
+---
+
+## O que foi aprendido com este projeto
+
+* Criação de pipelines CI/CD com GitHub Actions
+* Uso do Terraform para infraestrutura como código
+* Separação de ambientes (dev/prod)
+* Configuração de backend remoto no S3
+* Uso de Assume Role (STS) para autenticação segura
+* Execução de `plan`, `apply` e `destroy` via pipeline
+* Boas práticas iniciais de DevOps
+
+---
+
+## Referência
+
+Este projeto foi desenvolvido **seguindo o conteúdo educacional** do canal:
+
+**Build & Run**
+YouTube – Conteúdo focado em DevOps, Terraform e Cloud AWS.
+
+Todo o crédito pela estrutura original e explicação do projeto pertence ao autor do conteúdo.
+Este repositório tem **finalidade educacional e de aprendizado prático**.
+
+---
+
+## Observação
+
+Este projeto **não foi criado do zero** e não representa uma solução de produção.
+Ele foi utilizado como base de estudo para compreensão prática dos conceitos apresentados.
+
+```
