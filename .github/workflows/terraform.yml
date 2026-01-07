@@ -48,20 +48,22 @@ jobs:
                     cd infra && terraform init \
                         -backend-config="bucket=${{ inputs.aws-statefile-s3-bucket }}" \
                         -backend-config="key=${{ github.event.repository.name }}" \
-                        -backend-config="region=${{ inputs.aws-region }}"
-                        -backend-config="dynamodb_table=${{ inputs.aws-lock-dynamodb-table }}" \\
+                        -backend-config="region=${{ inputs.aws-region }}" \
+                        -backend-config="dynamodb_table=${{ inputs.aws-lock-dynamodb-table }}"
 
             - name: Terraform Validate
-              run: terraform validade
+              run: terraform validate
 
             - name: Terraform Plan
               id: terraform-plan
-              run: cd infra &&
-                    terraform workspace select ${{ inputs.environment }} ||terraform workspace new ${{ inputs.environment }} &&
+              run: |
+                    cd infra && \
+                    terraform workspace select ${{ inputs.environment }} ||terraform workspace new ${{ inputs.environment }} && \
                     terraform plan -var-files="./envs/${{ inputs.environment }}/terraform.tfvars" -out="${{ inputs.environment }}.plan"
             
             - name: Terraform Apply
               id: terraform-apply
-              run: cd infra &&
-                    terraform workspace select ${{ inputs.environment }} || terraform workspace new ${{ inputs.environment }} &&
+              run: |
+                    cd infra && \
+                    terraform workspace select ${{ inputs.environment }} || terraform workspace new ${{ inputs.environment }} && \
                     terraform apply "${{ inputs.environment }}.plan"
