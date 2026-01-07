@@ -47,6 +47,7 @@ infra/
       └── prod/
           └── terraform.tfvars
 ---
+```
 
 ## O que foi aprendido com este projeto
 
