@@ -30,7 +30,7 @@ O projeto foi realizado com o objetivo de **aprender na prática** os principais
 
 ## Estrutura do Repositório
 
-```terraform-infra-pipeline
+```
 .github/workflows/
   ├── terraform.yml
   └── deploy.yml
@@ -46,9 +46,8 @@ infra/
       │   └── terraform.tfvars
       └── prod/
           └── terraform.tfvars
----
 ```
-
+---
 ## O que foi aprendido com este projeto
 
 * Criação de pipelines CI/CD com GitHub Actions
